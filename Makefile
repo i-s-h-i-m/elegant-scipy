@@ -48,7 +48,7 @@ data/counts.txt: data/counts.txt.bz2
 	 bunzip2 -d -k -f data/counts.txt.bz2
 
 data/dm6.fa: data/dm6.fa.gz
-	 gunzip -f -k $<
+	 gunzip -f < $< > $@
 
 data/dm6.fa.gz:
 	 curl --remote-name http://hgdownload.cse.ucsc.edu/goldenPath/dm6/bigZips/dm6.fa.gz
